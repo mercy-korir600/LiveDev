@@ -23,13 +23,13 @@ const ChatMessage = ({ message }: ChatMessageProps) => {
       <div className="flex items-center space-x-2">
         <span className={`text-sm font-medium ${
           message.isHost 
-            ? 'bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent' 
-            : 'bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent'
+            ? 'bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent' 
+            : 'bg-gradient-to-r from-blue-300 to-cyan-300 bg-clip-text text-transparent'
         }`}>
           {message.user}
         </span>
         {message.isHost && (
-          <Badge variant="secondary" className="text-xs px-2 py-1 bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300 border-purple-400/30 backdrop-blur-sm shadow-sm">
+          <Badge variant="secondary" className="text-xs px-2 py-1 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 text-blue-300 border-blue-400/30 backdrop-blur-sm shadow-sm">
             HOST
           </Badge>
         )}

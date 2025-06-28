@@ -129,26 +129,26 @@ const Host = () => {
   }, [isStreaming]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-cyan-900 p-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-20 w-64 h-64 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-to-r from-pink-400 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
+        <div className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-pulse animation-delay-2000"></div>
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Host Dashboard</h1>
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Host Dashboard</h1>
           <div className="flex items-center space-x-4">
             {isStreaming && (
-              <Badge variant="destructive" className="animate-pulse bg-gradient-to-r from-red-500 to-pink-500 border-red-400/50">
+              <Badge variant="destructive" className="animate-pulse bg-gradient-to-r from-red-500 to-red-600 border-red-400/50">
                 <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
                 LIVE
               </Badge>
             )}
-            <div className="flex items-center text-white bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-lg px-3 py-2 border border-purple-400/30">
-              <Users className="h-4 w-4 mr-2 text-purple-400" />
+            <div className="flex items-center text-white bg-gradient-to-r from-blue-500/20 to-cyan-500/20 backdrop-blur-sm rounded-lg px-3 py-2 border border-blue-400/30">
+              <Users className="h-4 w-4 mr-2 text-blue-400" />
               <span>{viewerCount} viewers</span>
             </div>
           </div>
@@ -187,7 +187,7 @@ const Host = () => {
                     size="sm"
                     onClick={() => setVideoEnabled(!videoEnabled)}
                     className={videoEnabled 
-                      ? "bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white shadow-lg" 
+                      ? "bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg" 
                       : "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white"
                     }
                   >
@@ -209,9 +209,9 @@ const Host = () => {
             </Card>
 
             {/* Stream Controls */}
-            <Card className="bg-gradient-to-br from-purple-500/10 to-pink-600/10 backdrop-blur-sm border-purple-400/30 hover:border-purple-400/50 transition-all duration-300">
+            <Card className="bg-gradient-to-br from-blue-500/10 to-cyan-600/10 backdrop-blur-sm border-blue-400/30 hover:border-blue-400/50 transition-all duration-300">
               <CardHeader>
-                <CardTitle className="text-white bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Stream Controls</CardTitle>
+                <CardTitle className="text-white bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">Stream Controls</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center space-x-4">
@@ -223,7 +223,7 @@ const Host = () => {
                         readOnly
                         className="bg-gradient-to-r from-gray-800 to-gray-900 border-gray-600 text-white font-mono text-lg shadow-inner"
                       />
-                      <Button variant="outline" onClick={copyRoomCode} className="border-purple-400/50 text-purple-400 hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500 hover:text-white transition-all duration-300">
+                      <Button variant="outline" onClick={copyRoomCode} className="border-blue-400/50 text-blue-400 hover:bg-gradient-to-r hover:from-blue-500 hover:to-cyan-500 hover:text-white transition-all duration-300">
                         <Copy className="h-4 w-4" />
                       </Button>
                     </div>
@@ -232,11 +232,11 @@ const Host = () => {
                 
                 <div className="flex space-x-4">
                   {!isStreaming ? (
-                    <Button onClick={startStream} className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 flex-1 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Button onClick={startStream} className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 flex-1 shadow-lg hover:shadow-xl transition-all duration-300">
                       Start Stream
                     </Button>
                   ) : (
-                    <Button onClick={stopStream} variant="destructive" className="flex-1 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Button onClick={stopStream} variant="destructive" className="flex-1 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 shadow-lg hover:shadow-xl transition-all duration-300">
                       Stop Stream
                     </Button>
                   )}
@@ -249,7 +249,7 @@ const Host = () => {
           <div className="space-y-6">
             <Card className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border-gray-600/30 hover:border-gray-500/50 transition-all duration-300 h-96">
               <CardHeader>
-                <CardTitle className="text-white bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">Live Chat</CardTitle>
+                <CardTitle className="text-white bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Live Chat</CardTitle>
               </CardHeader>
               <CardContent className="h-full flex flex-col">
                 <div className="flex-1 overflow-y-auto space-y-2 mb-4">
